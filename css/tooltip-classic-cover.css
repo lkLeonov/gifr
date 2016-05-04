@@ -1,0 +1,17 @@
+      /* tooltip classic redefinitions */
+
+
+        .tooltip-content {
+            width: initial;
+            margin: 0;
+            margin-bottom: 20px;
+            left: initial;
+        }
+        .tooltip-content img {
+            margin: initial;
+            margin-bottom: 20px;
+        }
+        .tooltip-text {
+            font-size: initial;
+            padding: 1em;
+        }

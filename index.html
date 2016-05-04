@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@johnsnow</title>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <style>
+        
+        * {
+            margin: 0 auto;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: table;
+            background: #fafafa;
+            font-family: 'Noto Serif';
+        }
+        main {
+            height: 100%;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        article {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,.09);
+            color: #3A4145;
+            padding: 30px;
+            margin: 100px auto;
+            transition: all .2s;
+            max-width: 60%;
+
+            line-height: 1.6em;
+        }
+        article > header {
+            margin-bottom: 2em;
+        }
+        article > footer {
+            margin-top: 2em;
+        }
+        
+            article .author {
+                float: right;
+                
+            }
+
+            article .post-meta {
+                font-size: 1.1em;
+                color: #9EABB3;
+                text-transform: uppercase;
+                font-family: 'Open Sans Condensed';
+            }
+
+
+            a {
+                    color: cadetblue;
+            }
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/tooltip-classic.css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltip-classic-cover.css" />
+</head>
+<body>
+    
+    <main class="content" role="main">
+
+        <article class="post">
+            <header class="post-header">
+                <span class="post-meta"><time datetime="2015-12-05">05 Dec 2015 at 15:35</time></span>
+                <!-- <h2 class="post-title"><a href="#">The Beginning</a></h2> -->
+            </header>
+            <section class="post-text">
+                <p>
+                    Иду я короче по улице такой. Решил к чике подкатить. Подхожу, говорю, привет воробушек, пойдём, может,
+
+
+    <!-- [ superpower | Save the planet or die! #super@vasyapupking] turns into: -->
+
+                    <span class="tooltip tooltip-effect-1">
+                        <span class="tooltip-item">почирикаем</span>
+                        <span class="tooltip-content">
+                            <img data-g-img="img/hardfuck.gif" src="img/preload.gif" /> <!-- replace with g-img-name in data! -->
+                            <span class="tooltip-text">
+                                <a href="#" >#hardfuck</a><br/>
+                                <strong> разборки с женой </strong>
+                                <br/>
+                                @<a href="#" class="added-by">vasyapupking</a>
+                            </span>
+                        </span>
+                    </span>
+                    ? Она чет посмотрела на меня как-то
+
+                    <span class="tooltip tooltip-effect-1">
+                        <span class="tooltip-item">не здорово</span>
+                        <span class="tooltip-content">
+                            <img data-g-img="img/ew.gif" src="img/preload.gif" /> <!-- replace with g-img-name in data! -->
+                            <span class="tooltip-text">
+                                <a href="#" >#ew</a><br/>
+                                <strong> Clint Eastwood</strong>
+                                <br/>
+                                @<a href="#" class="added-by">johnsmith</a>
+                            </span>
+                        </span>
+                    </span>
+
+                    . И свалила. Я парень простой и, если честно, в такие моменты хочется просто 
+
+                    <span class="tooltip tooltip-effect-1">
+                        <span class="tooltip-item">одного</span>
+                        <span class="tooltip-content">
+                            <img data-g-img="img/bbpe.gif" src="img/preload.gif" /> <!-- replace with g-img-name in data! -->
+                            <span class="tooltip-text">
+                                <a href="#" >#headsmash</a><br/>
+                                <strong>Взять и уебать</strong>
+                                <br/>
+                                @<a href="#" class="added-by">@jasongreen</a>
+                            </span>
+                        </span>
+                    </span>
+
+                    . Но у меня сегодня было хорошее настроение. Ладно, пусть живёт.
+                </p>
+            </section>
+            <footer>
+                <span class="author">@<a href="#">laukye</a></span>
+            </footer>
+        </article>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script>
+        
+        $('.tooltip').click(function(){
+            $tt = $(this);
+             // unbind all ev
+             console.log($tt)
+
+            $ttItem = $tt.find('.tooltip-item');
+            $ttContent = $tt.find('.tooltip-content');
+            console.log($ttContent)
+            $ttContent.css({left: - ( $ttContent.outerWidth()/2 - $ttItem.outerWidth()/2)});
+            $tt.toggleClass('active');
+
+            // simulate ajax
+                setTimeout(function(a, b){
+                    // let's say ajax responded with url "img/somegif.gif"
+
+                    return function() {
+                        var gif = new Image();
+
+                            // this source is ajax-responded
+                            var src = a.find('img').data('g-img');
+                            console.log(src);
+
+                        gif.src = src;
+                        gif.onload = function(){
+                            $ttContent.find('img').attr('src', gif.src);
+                            $ttContent.css({left: - ( a.outerWidth()/2 - b.outerWidth()/2)});
+                        }
+                    }
+                
+                } ($ttContent, $ttItem), 600)
+        });
+    </script>
+
+</body>
+</html>
+
+
+
